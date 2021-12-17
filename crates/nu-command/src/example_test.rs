@@ -11,7 +11,6 @@ use nu_protocol::{
 #[cfg(test)]
 use crate::To;
 
-#[cfg(test)]
 use super::{Ansi, Date, From, Into, Math, Path, Random, Split, Str, StrCollect, Url};
 
 #[cfg(test)]
