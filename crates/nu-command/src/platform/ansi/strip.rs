@@ -40,8 +40,8 @@ impl Command for SubCommand {
     fn examples(&self) -> Vec<Example> {
         vec![Example {
             description: "strip ansi escape sequences from string",
-            example: r#"echo [ (ansi green) (ansi cursor_on) "hello" ] | str collect | ansi strip"#,
-            result: Some(Value::test_string("hello")),
+            example: "echo [(ansi gb) 'hello' (ansi reset)] | str collect | ansi strip",
+            result: None,
         }]
     }
 }
@@ -117,7 +117,7 @@ mod tests {
             Value::test_string("\u{1b}[3;93;41mHello\u{1b}[0m \u{1b}[1;32mNu \u{1b}[1;35mWorld");
         let expected = Value::test_string("Hello Nu World");
 
-        let actual = action(&input_string, &Span::test_data());
+        let actual = action(&input_string, &Span::unknown());
         assert_eq!(actual, expected);
     }
 }
