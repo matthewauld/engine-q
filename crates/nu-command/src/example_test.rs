@@ -11,7 +11,7 @@ use nu_protocol::{
 #[cfg(test)]
 use crate::To;
 
-use super::{Ansi, Date, From, Into, Math, Path, Random, Split, Str, StrCollect, Url};
+use super::{Ansi, Date, From, FromJson, Into, Math, Path, Random, Split, Str, StrCollect, Url};
 
 #[cfg(test)]
 pub fn test_examples(cmd: impl Command + 'static) {
@@ -34,6 +34,7 @@ pub fn test_examples(cmd: impl Command + 'static) {
         working_set.add_decl(Box::new(Date));
         working_set.add_decl(Box::new(Url));
         working_set.add_decl(Box::new(Ansi));
+        working_set.add_decl(Box::new(FromJson));
 
         use super::Echo;
         working_set.add_decl(Box::new(Echo));
