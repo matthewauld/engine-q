@@ -52,6 +52,7 @@ pub fn create_default_context() -> EngineState {
             Collect,
             Columns,
             Compact,
+            Default,
             Drop,
             DropColumn,
             DropNth,
